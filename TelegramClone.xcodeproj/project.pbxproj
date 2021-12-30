@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA6A598A277E21E7002C8390 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A5989277E21E7002C8390 /* ChatTableViewController.swift */; };
+		AA6A598C277E25F9002C8390 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */; };
 		AAEAAD182778D8BB0056985E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEAAD172778D8BB0056985E /* AppDelegate.swift */; };
 		AAEAAD1A2778D8BB0056985E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEAAD192778D8BB0056985E /* SceneDelegate.swift */; };
-		AAEAAD1C2778D8BB0056985E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEAAD1B2778D8BB0056985E /* ViewController.swift */; };
 		AAEAAD1F2778D8BB0056985E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAEAAD1D2778D8BB0056985E /* Main.storyboard */; };
 		AAEAAD212778D8BC0056985E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAEAAD202778D8BC0056985E /* Assets.xcassets */; };
 		AAEAAD242778D8BC0056985E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAEAAD222778D8BC0056985E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA6A5989277E21E7002C8390 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
+		AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		AAEAAD142778D8BB0056985E /* TelegramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEAAD172778D8BB0056985E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAEAAD192778D8BB0056985E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AAEAAD1B2778D8BB0056985E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AAEAAD1E2778D8BB0056985E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAEAAD202778D8BC0056985E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAEAAD232778D8BC0056985E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,8 +60,9 @@
 			children = (
 				AAEAAD172778D8BB0056985E /* AppDelegate.swift */,
 				AAEAAD192778D8BB0056985E /* SceneDelegate.swift */,
-				AAEAAD1B2778D8BB0056985E /* ViewController.swift */,
 				AAEAAD1D2778D8BB0056985E /* Main.storyboard */,
+				AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */,
+				AA6A5989277E21E7002C8390 /* ChatTableViewController.swift */,
 				AAEAAD202778D8BC0056985E /* Assets.xcassets */,
 				AAEAAD222778D8BC0056985E /* LaunchScreen.storyboard */,
 				AAEAAD252778D8BC0056985E /* Info.plist */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAEAAD1C2778D8BB0056985E /* ViewController.swift in Sources */,
 				AAEAAD182778D8BB0056985E /* AppDelegate.swift in Sources */,
 				AAEAAD1A2778D8BB0056985E /* SceneDelegate.swift in Sources */,
+				AA6A598C277E25F9002C8390 /* ContactsTableViewController.swift in Sources */,
+				AA6A598A277E21E7002C8390 /* ChatTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +310,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -334,7 +338,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
