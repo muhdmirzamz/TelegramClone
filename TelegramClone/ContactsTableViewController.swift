@@ -14,8 +14,6 @@ class ContactsTableViewController: UITableViewController {
         
         // sets the default screen to the middle screen
         self.tabBarController?.selectedIndex = 1
-        
-        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

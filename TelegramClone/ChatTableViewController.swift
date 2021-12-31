@@ -9,6 +9,8 @@ import UIKit
 
 class ChatTableViewController: UITableViewController {
 
+    var randomArr = ["Hello", "Bye", "Yo"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,29 +19,41 @@ class ChatTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.registerTableViewCell()
     }
 
+    func registerTableViewCell() {
+        let chatTableViewCell = UINib.init(nibName: "ChatTableViewCell", bundle: nil)
+        
+        self.tableView.register(chatTableViewCell, forCellReuseIdentifier: "ChatTableViewCell")
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.randomArr.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath) as! ChatTableViewCell
+        
+//        if let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell") as? ChatTableViewCell {
+//            return cell
+//        }
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

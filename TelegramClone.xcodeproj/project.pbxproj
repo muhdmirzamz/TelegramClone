@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA1FA3FC277F6FC700ABFA48 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1FA3FA277F6FC700ABFA48 /* ChatTableViewCell.swift */; };
+		AA1FA3FD277F6FC700ABFA48 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1FA3FB277F6FC700ABFA48 /* ChatTableViewCell.xib */; };
 		AA6A598A277E21E7002C8390 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A5989277E21E7002C8390 /* ChatTableViewController.swift */; };
 		AA6A598C277E25F9002C8390 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */; };
 		AAEAAD182778D8BB0056985E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEAAD172778D8BB0056985E /* AppDelegate.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA1FA3FA277F6FC700ABFA48 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		AA1FA3FB277F6FC700ABFA48 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		AA6A5989277E21E7002C8390 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
 		AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		AAEAAD142778D8BB0056985E /* TelegramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +65,8 @@
 				AAEAAD172778D8BB0056985E /* AppDelegate.swift */,
 				AAEAAD192778D8BB0056985E /* SceneDelegate.swift */,
 				AAEAAD1D2778D8BB0056985E /* Main.storyboard */,
+				AA1FA3FA277F6FC700ABFA48 /* ChatTableViewCell.swift */,
+				AA1FA3FB277F6FC700ABFA48 /* ChatTableViewCell.xib */,
 				AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */,
 				AA6A5989277E21E7002C8390 /* ChatTableViewController.swift */,
 				AAEAAD202778D8BC0056985E /* Assets.xcassets */,
@@ -129,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAEAAD242778D8BC0056985E /* LaunchScreen.storyboard in Resources */,
+				AA1FA3FD277F6FC700ABFA48 /* ChatTableViewCell.xib in Resources */,
 				AAEAAD212778D8BC0056985E /* Assets.xcassets in Resources */,
 				AAEAAD1F2778D8BB0056985E /* Main.storyboard in Resources */,
 			);
@@ -143,6 +150,7 @@
 			files = (
 				AAEAAD182778D8BB0056985E /* AppDelegate.swift in Sources */,
 				AAEAAD1A2778D8BB0056985E /* SceneDelegate.swift in Sources */,
+				AA1FA3FC277F6FC700ABFA48 /* ChatTableViewCell.swift in Sources */,
 				AA6A598C277E25F9002C8390 /* ContactsTableViewController.swift in Sources */,
 				AA6A598A277E21E7002C8390 /* ChatTableViewController.swift in Sources */,
 			);
