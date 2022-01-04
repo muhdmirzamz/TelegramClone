@@ -6,6 +6,9 @@ This is a practice app for me to practise iOS development.
 
 ### CHANGELOG
 
+5 Jan 2022:
+- Drafted out the login screen and registration screen in Storyboard
+
 4 Jan 2022:
 - Created Firebase project
 - Converted project to a Cocoapods project
