@@ -98,8 +98,8 @@
                                     <action selector="dismissViewController" destination="KS6-9h-NOy" eventType="touchUpInside" id="zHZ-iW-mNe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGl-6W-JrG">
-                                <rect key="frame" x="96" y="515" width="222" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGl-6W-JrG">
+                                <rect key="frame" x="96" y="578" width="222" height="48"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Register"/>
                                 <connections>
@@ -111,18 +111,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JXs-gL-axh">
+                                <rect key="frame" x="96" y="501" width="222" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y79-3j-h0B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JXs-gL-axh" firstAttribute="centerX" secondItem="TNF-tf-Ms1" secondAttribute="centerX" id="1HU-9d-Eb5"/>
+                            <constraint firstItem="JXs-gL-axh" firstAttribute="top" secondItem="OWY-rz-eVZ" secondAttribute="bottom" constant="36" id="5IX-Vc-92M"/>
                             <constraint firstItem="OWY-rz-eVZ" firstAttribute="top" secondItem="9Tp-Qy-5Bl" secondAttribute="bottom" constant="32" id="7WQ-Xb-cmD"/>
                             <constraint firstItem="9Tp-Qy-5Bl" firstAttribute="centerX" secondItem="TNF-tf-Ms1" secondAttribute="centerX" id="C0p-Sv-U3l"/>
                             <constraint firstItem="9Tp-Qy-5Bl" firstAttribute="top" secondItem="hUn-Pr-lGr" secondAttribute="bottom" constant="30" id="DwY-d8-QV7"/>
                             <constraint firstItem="9Tp-Qy-5Bl" firstAttribute="leading" secondItem="y79-3j-h0B" secondAttribute="leading" constant="96" id="Fdf-P3-XLh"/>
-                            <constraint firstItem="pGl-6W-JrG" firstAttribute="top" secondItem="OWY-rz-eVZ" secondAttribute="bottom" constant="50" id="Grq-7I-Sq4"/>
-                            <constraint firstItem="pGl-6W-JrG" firstAttribute="centerX" secondItem="TNF-tf-Ms1" secondAttribute="centerX" id="MYo-Rq-Rpd"/>
-                            <constraint firstItem="pGl-6W-JrG" firstAttribute="leading" secondItem="y79-3j-h0B" secondAttribute="leading" constant="96" id="Tgb-Fc-Osb"/>
+                            <constraint firstItem="pGl-6W-JrG" firstAttribute="centerX" secondItem="TNF-tf-Ms1" secondAttribute="centerX" id="Pul-06-v50"/>
                             <constraint firstItem="OWY-rz-eVZ" firstAttribute="centerX" secondItem="TNF-tf-Ms1" secondAttribute="centerX" id="URR-qQ-lDz"/>
+                            <constraint firstItem="pGl-6W-JrG" firstAttribute="leading" secondItem="y79-3j-h0B" secondAttribute="leading" constant="96" id="VjK-qJ-KGk"/>
+                            <constraint firstItem="JXs-gL-axh" firstAttribute="leading" secondItem="y79-3j-h0B" secondAttribute="leading" constant="96" id="WV0-03-Mdf"/>
+                            <constraint firstItem="pGl-6W-JrG" firstAttribute="top" secondItem="JXs-gL-axh" secondAttribute="bottom" constant="43" id="b8t-tm-TlP"/>
                             <constraint firstItem="hUn-Pr-lGr" firstAttribute="top" secondItem="y79-3j-h0B" secondAttribute="top" constant="257" id="f6m-uv-AUr"/>
                             <constraint firstItem="hUn-Pr-lGr" firstAttribute="centerX" secondItem="TNF-tf-Ms1" secondAttribute="centerX" id="gTW-gY-7mO"/>
                             <constraint firstItem="OWY-rz-eVZ" firstAttribute="leading" secondItem="y79-3j-h0B" secondAttribute="leading" constant="96" id="vgP-VN-JE1"/>
@@ -135,6 +143,7 @@
                         <outlet property="emailTextfield" destination="hUn-Pr-lGr" id="Abc-PL-xm1"/>
                         <outlet property="passwordTextfield" destination="9Tp-Qy-5Bl" id="Ilr-af-m8a"/>
                         <outlet property="phoneNumberTextfield" destination="OWY-rz-eVZ" id="QFY-w7-zA7"/>
+                        <outlet property="usernameTextfield" destination="JXs-gL-axh" id="8Qv-Vs-Sfl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usl-7E-vUH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

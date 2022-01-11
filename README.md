@@ -6,6 +6,11 @@ This is a practice app for me to practise iOS development.
 
 ### CHANGELOG
 
+12 Jan 2022:
+- Applied autolayout to chat cells
+- Added an extra field, "username", to registration so each user now has a username
+- Change user's status to "online" upon logging in
+
 11 Jan 2022:
 - You can now sign in as a user
 - Changed username textfield to email textfield

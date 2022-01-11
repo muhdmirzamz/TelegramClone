@@ -8,6 +8,7 @@
 import UIKit
 
 import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
 
@@ -28,6 +29,13 @@ class LoginViewController: UIViewController {
         guard let password = self.passwordTextfield.text else {
             return
         }
+        
+        let ref = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        
+        // to set the child value, be specific
+        // set the status, not the entire tree of the child "user id"
+        ref.child("/profile").child(userID!).child("status").setValue("online")
         
         
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in

@@ -62,6 +62,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AA7EB393278DF61600FB66E8 /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AAA1C929278C99C9004280A5 /* LoginViewController.swift */,
+				AACFDB57278B22A000108901 /* RegisterViewController.swift */,
+				AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */,
+				AA6A5989277E21E7002C8390 /* ChatTableViewController.swift */,
+			);
+			name = "view controllers";
+			sourceTree = "<group>";
+		};
 		AAEAAD0B2778D8BB0056985E = {
 			isa = PBXGroup;
 			children = (
@@ -83,18 +94,15 @@
 		AAEAAD162778D8BB0056985E /* TelegramClone */ = {
 			isa = PBXGroup;
 			children = (
-				AA745CFB2783593A00DCE8C0 /* GoogleService-Info.plist */,
 				AAEAAD172778D8BB0056985E /* AppDelegate.swift */,
 				AAEAAD192778D8BB0056985E /* SceneDelegate.swift */,
-				AAEAAD1D2778D8BB0056985E /* Main.storyboard */,
-				AAA1C929278C99C9004280A5 /* LoginViewController.swift */,
-				AACFDB57278B22A000108901 /* RegisterViewController.swift */,
+				AA7EB393278DF61600FB66E8 /* view controllers */,
 				AA1FA3FA277F6FC700ABFA48 /* ChatTableViewCell.swift */,
 				AA1FA3FB277F6FC700ABFA48 /* ChatTableViewCell.xib */,
-				AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */,
-				AA6A5989277E21E7002C8390 /* ChatTableViewController.swift */,
 				AAEAAD202778D8BC0056985E /* Assets.xcassets */,
+				AAEAAD1D2778D8BB0056985E /* Main.storyboard */,
 				AAEAAD222778D8BC0056985E /* LaunchScreen.storyboard */,
+				AA745CFB2783593A00DCE8C0 /* GoogleService-Info.plist */,
 				AAEAAD252778D8BC0056985E /* Info.plist */,
 			);
 			path = TelegramClone;

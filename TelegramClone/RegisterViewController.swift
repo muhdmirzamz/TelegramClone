@@ -15,6 +15,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
     @IBOutlet var phoneNumberTextfield: UITextField!
+    @IBOutlet var usernameTextfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,10 @@ class RegisterViewController: UIViewController {
         guard let phoneNumber = self.phoneNumberTextfield.text else {
             return
         }
+        
+        guard let username = self.usernameTextfield.text else {
+            return
+        }
 
 
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
@@ -52,7 +57,8 @@ class RegisterViewController: UIViewController {
                 let listDict: NSMutableDictionary = [
                     "number": phoneNumber,
                     "bio": "",
-                    "status": ""
+                    "status": "",
+                    "username": username
                 ]
                 
                 // .child auto creates an entry too apparently
