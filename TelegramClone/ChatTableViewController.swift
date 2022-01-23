@@ -7,8 +7,15 @@
 
 import UIKit
 
-class ChatTableViewController: UITableViewController {
+import FirebaseAuth
+import FirebaseDatabase
 
+class ChatTableViewController: UITableViewController, UISearchResultsUpdating {
+
+    var searchController: UISearchController?
+    
+//    var filteredItemsArray = []()
+    
     var randomArr = ["Hello", "Bye", "Yo"]
     
     override func viewDidLoad() {
@@ -21,6 +28,13 @@ class ChatTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         self.registerTableViewCell()
+        
+        self.searchController = UISearchController.init(searchResultsController: nil)
+        self.searchController?.searchResultsUpdater = self
+        
+//        self.searchController?.dimsBackgroundDuringPresentation = false
+        self.searchController?.definesPresentationContext = true
+        self.tableView.tableHeaderView = self.searchController?.searchBar
     }
 
     func registerTableViewCell() {
@@ -53,6 +67,88 @@ class ChatTableViewController: UITableViewController {
 
         return cell
     }
+    
+    
+    public func updateSearchResults(for searchController: UISearchController) {
+        
+        let ref = Database.database().reference()
+//        let userID = Auth.auth().currentUser?.uid
+        
+        ref.child("/profile").observeSingleEvent(of: .value) { (snapshot) in
+            
+//            print("\(snapshot)")
+            
+            if let profilesDict = snapshot.value as? Dictionary<String, Any> {
+                
+                print("\(profilesDict)")
+                
+                for profile in profilesDict {
+                    
+                    if let profileObj = profile.value as? Dictionary<String, Any> {
+                        guard let username = profileObj["username"] as? String else {
+                            return
+                        }
+                        
+                        print(username)
+                    }
+                    
+                }
+                
+//                for i in listsDict {
+//
+//                    let list = List()
+//
+//                    list.key = i.key
+//
+//
+//                    if let listNameDict = i.value as? Dictionary<String, Any> {
+//
+//                        guard let listName = listNameDict["listName"] as? String else {
+//                            return
+//                        }
+//
+//                        list.listName = listName
+//
+//                        guard let timestamp = listNameDict["timestamp"] as? String else {
+//                            return
+//                        }
+//
+//                        list.timestamp = timestamp
+//
+//                        self.listArray.append(list)
+//                    }
+//                }
+            }
+            
+//            self.listArray.sort(by: {$0.timestamp! > $1.timestamp!})
+            
+//            self.tableView.reloadData()
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//        self.filteredItemsArray = self.itemsArray.filter{items in
+//            let convertedItems = items as? Item
+//
+//            let convertedItemName = (convertedItems?.name?.lowercased())!
+//
+//            return (convertedItemName.contains(searchController.searchBar.text!.lowercased()))
+//        }
+//
+//
+//        self.tableView.reloadData()
+    }
+    
     
 
     /*
