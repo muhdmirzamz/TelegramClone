@@ -18,6 +18,9 @@ class ChatTableViewController: UITableViewController, UISearchResultsUpdating {
     
     var randomArr = ["Hello", "Bye", "Yo"]
     
+    var usersArr: [String] = []
+    var filteredUsersArr: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,6 +39,39 @@ class ChatTableViewController: UITableViewController, UISearchResultsUpdating {
         self.searchController?.definesPresentationContext = true
         self.tableView.tableHeaderView = self.searchController?.searchBar
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.usersArr.removeAll()
+        
+        let ref = Database.database().reference()
+        
+        ref.child("/profile").observeSingleEvent(of: .value) { (snapshot) in
+            
+//            print("\(snapshot)")
+            
+            if let profilesDict = snapshot.value as? Dictionary<String, Any> {
+                
+//                print("\(profilesDict)")
+//
+                // for every profile
+                for profileObj in profilesDict {
+
+                    if let profileInfo = profileObj.value as? Dictionary<String, Any> {
+                        
+                        // get the username
+                        guard let username = profileInfo["username"] as? String else {
+                            return
+                        }
+                        
+                        self.usersArr.append(username)
+                    }
+
+                }
+
+            }
+
+        }
+    }
 
     func registerTableViewCell() {
         let chatTableViewCell = UINib.init(nibName: "ChatTableViewCell", bundle: nil)
@@ -52,16 +88,16 @@ class ChatTableViewController: UITableViewController, UISearchResultsUpdating {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if self.searchController?.isActive == true && self.searchController?.searchBar.text?.isEmpty == false {
+            return self.filteredUsersArr.count
+        }
+        
         return self.randomArr.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath) as! ChatTableViewCell
-        
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell") as? ChatTableViewCell {
-//            return cell
-//        }
 
         // Configure the cell...
 
@@ -71,82 +107,16 @@ class ChatTableViewController: UITableViewController, UISearchResultsUpdating {
     
     public func updateSearchResults(for searchController: UISearchController) {
         
-        let ref = Database.database().reference()
-//        let userID = Auth.auth().currentUser?.uid
-        
-        ref.child("/profile").observeSingleEvent(of: .value) { (snapshot) in
-            
-//            print("\(snapshot)")
-            
-            if let profilesDict = snapshot.value as? Dictionary<String, Any> {
-                
-                print("\(profilesDict)")
-                
-                for profile in profilesDict {
-                    
-                    if let profileObj = profile.value as? Dictionary<String, Any> {
-                        guard let username = profileObj["username"] as? String else {
-                            return
-                        }
-                        
-                        print(username)
-                    }
-                    
-                }
-                
-//                for i in listsDict {
-//
-//                    let list = List()
-//
-//                    list.key = i.key
-//
-//
-//                    if let listNameDict = i.value as? Dictionary<String, Any> {
-//
-//                        guard let listName = listNameDict["listName"] as? String else {
-//                            return
-//                        }
-//
-//                        list.listName = listName
-//
-//                        guard let timestamp = listNameDict["timestamp"] as? String else {
-//                            return
-//                        }
-//
-//                        list.timestamp = timestamp
-//
-//                        self.listArray.append(list)
-//                    }
-//                }
-            }
-            
-//            self.listArray.sort(by: {$0.timestamp! > $1.timestamp!})
-            
-//            self.tableView.reloadData()
-            
+        guard let searchText = searchController.searchBar.text?.lowercased() else {
+            return
         }
         
+        self.filteredUsersArr = self.usersArr.filter { username in
+            return username.contains(searchText)
+        }
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-//        self.filteredItemsArray = self.itemsArray.filter{items in
-//            let convertedItems = items as? Item
-//
-//            let convertedItemName = (convertedItems?.name?.lowercased())!
-//
-//            return (convertedItemName.contains(searchController.searchBar.text!.lowercased()))
-//        }
-//
-//
-//        self.tableView.reloadData()
+        self.tableView.reloadData()
+
     }
     
     

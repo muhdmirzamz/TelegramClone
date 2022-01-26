@@ -6,6 +6,9 @@ This is a practice app for me to practise iOS development.
 
 ### CHANGELOG
 
+26 Jan 2022:
+- Username search is working
+
 12 Jan 2022:
 - Applied autolayout to chat cells
 - Added an extra field, "username", to registration so each user now has a username
