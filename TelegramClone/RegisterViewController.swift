@@ -13,8 +13,9 @@ import FirebaseDatabase
 class RegisterViewController: UIViewController {
 
     @IBOutlet var emailTextfield: UITextField!
-    @IBOutlet var passwordTextfield: UITextField!
     @IBOutlet var phoneNumberTextfield: UITextField!
+    @IBOutlet var nameTextfield: UITextField!
+    @IBOutlet var passwordTextfield: UITextField!
     @IBOutlet var usernameTextfield: UITextField!
     
     override func viewDidLoad() {
@@ -33,17 +34,22 @@ class RegisterViewController: UIViewController {
             return
         }
 
-        guard let password = self.passwordTextfield.text else {
+        guard let phoneNumber = self.phoneNumberTextfield.text else {
             return
         }
         
-        guard let phoneNumber = self.phoneNumberTextfield.text else {
+        guard let name = self.nameTextfield.text else {
             return
         }
         
         guard let username = self.usernameTextfield.text else {
             return
         }
+        
+        guard let password = self.passwordTextfield.text else {
+            return
+        }
+        
 
 
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
@@ -58,7 +64,8 @@ class RegisterViewController: UIViewController {
                     "number": phoneNumber,
                     "bio": "",
                     "status": "",
-                    "username": username
+                    "username": username,
+                    "name": name,
                 ]
                 
                 // .child auto creates an entry too apparently

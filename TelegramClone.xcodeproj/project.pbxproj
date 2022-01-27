@@ -10,6 +10,8 @@
 		5A284B6956E800FCD3B5C059 /* Pods_TelegramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29129B2853C695C8688F82AC /* Pods_TelegramClone.framework */; };
 		AA1FA3FC277F6FC700ABFA48 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1FA3FA277F6FC700ABFA48 /* ChatTableViewCell.swift */; };
 		AA1FA3FD277F6FC700ABFA48 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1FA3FB277F6FC700ABFA48 /* ChatTableViewCell.xib */; };
+		AA3456D527A2FD1100563439 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3456D327A2FD1100563439 /* UserTableViewCell.swift */; };
+		AA3456D627A2FD1100563439 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3456D427A2FD1100563439 /* UserTableViewCell.xib */; };
 		AA6A598A277E21E7002C8390 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A5989277E21E7002C8390 /* ChatTableViewController.swift */; };
 		AA6A598C277E25F9002C8390 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */; };
 		AA745CFC2783593A00DCE8C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA745CFB2783593A00DCE8C0 /* GoogleService-Info.plist */; };
@@ -28,6 +30,8 @@
 		68C2E34B4D21D710689670DC /* Pods-TelegramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TelegramClone.release.xcconfig"; path = "Target Support Files/Pods-TelegramClone/Pods-TelegramClone.release.xcconfig"; sourceTree = "<group>"; };
 		AA1FA3FA277F6FC700ABFA48 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		AA1FA3FB277F6FC700ABFA48 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		AA3456D327A2FD1100563439 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		AA3456D427A2FD1100563439 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		AA6A5989277E21E7002C8390 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
 		AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		AA745CFB2783593A00DCE8C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 				AA7EB393278DF61600FB66E8 /* view controllers */,
 				AA1FA3FA277F6FC700ABFA48 /* ChatTableViewCell.swift */,
 				AA1FA3FB277F6FC700ABFA48 /* ChatTableViewCell.xib */,
+				AA3456D327A2FD1100563439 /* UserTableViewCell.swift */,
+				AA3456D427A2FD1100563439 /* UserTableViewCell.xib */,
 				AAEAAD202778D8BC0056985E /* Assets.xcassets */,
 				AAEAAD1D2778D8BB0056985E /* Main.storyboard */,
 				AAEAAD222778D8BC0056985E /* LaunchScreen.storyboard */,
@@ -181,6 +187,7 @@
 				AA1FA3FD277F6FC700ABFA48 /* ChatTableViewCell.xib in Resources */,
 				AA745CFC2783593A00DCE8C0 /* GoogleService-Info.plist in Resources */,
 				AAEAAD212778D8BC0056985E /* Assets.xcassets in Resources */,
+				AA3456D627A2FD1100563439 /* UserTableViewCell.xib in Resources */,
 				AAEAAD1F2778D8BB0056985E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +245,7 @@
 				AAEAAD182778D8BB0056985E /* AppDelegate.swift in Sources */,
 				AAEAAD1A2778D8BB0056985E /* SceneDelegate.swift in Sources */,
 				AA1FA3FC277F6FC700ABFA48 /* ChatTableViewCell.swift in Sources */,
+				AA3456D527A2FD1100563439 /* UserTableViewCell.swift in Sources */,
 				AACFDB58278B22A000108901 /* RegisterViewController.swift in Sources */,
 				AA6A598C277E25F9002C8390 /* ContactsTableViewController.swift in Sources */,
 				AA6A598A277E21E7002C8390 /* ChatTableViewController.swift in Sources */,

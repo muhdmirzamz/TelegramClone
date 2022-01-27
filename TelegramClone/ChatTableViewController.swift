@@ -31,6 +31,7 @@ class ChatTableViewController: UITableViewController, UISearchResultsUpdating {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         self.registerTableViewCell()
+        self.registerUserTableViewCell()
         
         self.searchController = UISearchController.init(searchResultsController: nil)
         self.searchController?.searchResultsUpdater = self
@@ -79,6 +80,14 @@ class ChatTableViewController: UITableViewController, UISearchResultsUpdating {
         self.tableView.register(chatTableViewCell, forCellReuseIdentifier: "ChatTableViewCell")
     }
     
+    func registerUserTableViewCell() {
+        let userTableViewCell = UINib.init(nibName: "UserTableViewCell", bundle: nil)
+        
+        // since there is no interface for this unlike the ChatTableViewCell, we just give it a custom name
+        // for the "forCellReuseIdentifier" field
+        self.tableView.register(userTableViewCell, forCellReuseIdentifier: "UserTableViewCell")
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -97,6 +106,14 @@ class ChatTableViewController: UITableViewController, UISearchResultsUpdating {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if self.searchController?.isActive == true && self.searchController?.searchBar.text?.isEmpty == false {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
+            
+            cell.usernameLabel.text = self.filteredUsersArr[indexPath.row]
+            
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath) as! ChatTableViewCell
 
         // Configure the cell...

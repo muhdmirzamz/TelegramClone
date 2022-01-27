@@ -6,6 +6,10 @@ This is a practice app for me to practise iOS development.
 
 ### CHANGELOG
 
+28 Jan 2022:
+- Added "name" to a user's information
+- Searching for a user now displays their name in a custom ```UILabel```
+
 26 Jan 2022:
 - Username search is working
 
