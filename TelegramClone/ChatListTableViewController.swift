@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class ChatTableViewController: UITableViewController, UISearchResultsUpdating {
+class ChatListTableViewController: UITableViewController, UISearchResultsUpdating {
 
     var searchController: UISearchController?
     
@@ -119,6 +119,23 @@ class ChatTableViewController: UITableViewController, UISearchResultsUpdating {
         // Configure the cell...
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if self.searchController?.isActive == true && self.searchController?.searchBar.text?.isEmpty == false {
+            let cell = tableView.cellForRow(at: indexPath)
+            
+            if cell is UserTableViewCell {
+                guard let chatViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController else {
+                    return
+                }
+                
+                self.searchController?.isActive = false
+                
+                chatViewController.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(chatViewController, animated: true)
+            }
+        }
     }
     
     

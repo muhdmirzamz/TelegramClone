@@ -31,17 +31,17 @@ class LoginViewController: UIViewController {
         }
         
         let ref = Database.database().reference()
-        let userID = Auth.auth().currentUser?.uid
-        
-        // to set the child value, be specific
-        // set the status, not the entire tree of the child "user id"
-        ref.child("/profile").child(userID!).child("status").setValue("online")
         
         
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let result = result {
                 print(result.user.uid)
                 print(result.user.email!)
+                
+                // to set the child value, be specific
+                // set the status, not the entire tree of the child "user id"
+                let userID = Auth.auth().currentUser?.uid
+                ref.child("/profile").child(userID!).child("status").setValue("online")
                 
                 DispatchQueue.main.async {
                     let tabBarVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MainTabViewController") as? UITabBarController

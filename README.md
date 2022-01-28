@@ -6,6 +6,9 @@ This is a practice app for me to practise iOS development.
 
 ### CHANGELOG
 
+29 Jan 2022:
+- Fixed: We get the authenticated user after we sign in as the user, not before. This fixes a crash when logging in.
+
 28 Jan 2022:
 - Added "name" to a user's information
 - Searching for a user now displays their name in a custom ```UILabel```

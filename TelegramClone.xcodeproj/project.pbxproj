@@ -12,7 +12,8 @@
 		AA1FA3FD277F6FC700ABFA48 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1FA3FB277F6FC700ABFA48 /* ChatTableViewCell.xib */; };
 		AA3456D527A2FD1100563439 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3456D327A2FD1100563439 /* UserTableViewCell.swift */; };
 		AA3456D627A2FD1100563439 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3456D427A2FD1100563439 /* UserTableViewCell.xib */; };
-		AA6A598A277E21E7002C8390 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A5989277E21E7002C8390 /* ChatTableViewController.swift */; };
+		AA5FBD3C27A461CF0029E25B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5FBD3B27A461CF0029E25B /* ChatViewController.swift */; };
+		AA6A598A277E21E7002C8390 /* ChatListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A5989277E21E7002C8390 /* ChatListTableViewController.swift */; };
 		AA6A598C277E25F9002C8390 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */; };
 		AA745CFC2783593A00DCE8C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA745CFB2783593A00DCE8C0 /* GoogleService-Info.plist */; };
 		AAA1C92A278C99C9004280A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1C929278C99C9004280A5 /* LoginViewController.swift */; };
@@ -32,7 +33,8 @@
 		AA1FA3FB277F6FC700ABFA48 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		AA3456D327A2FD1100563439 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		AA3456D427A2FD1100563439 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
-		AA6A5989277E21E7002C8390 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
+		AA5FBD3B27A461CF0029E25B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		AA6A5989277E21E7002C8390 /* ChatListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTableViewController.swift; sourceTree = "<group>"; };
 		AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		AA745CFB2783593A00DCE8C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAA1C929278C99C9004280A5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +74,8 @@
 				AAA1C929278C99C9004280A5 /* LoginViewController.swift */,
 				AACFDB57278B22A000108901 /* RegisterViewController.swift */,
 				AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */,
-				AA6A5989277E21E7002C8390 /* ChatTableViewController.swift */,
+				AA6A5989277E21E7002C8390 /* ChatListTableViewController.swift */,
+				AA5FBD3B27A461CF0029E25B /* ChatViewController.swift */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -248,7 +251,8 @@
 				AA3456D527A2FD1100563439 /* UserTableViewCell.swift in Sources */,
 				AACFDB58278B22A000108901 /* RegisterViewController.swift in Sources */,
 				AA6A598C277E25F9002C8390 /* ContactsTableViewController.swift in Sources */,
-				AA6A598A277E21E7002C8390 /* ChatTableViewController.swift in Sources */,
+				AA5FBD3C27A461CF0029E25B /* ChatViewController.swift in Sources */,
+				AA6A598A277E21E7002C8390 /* ChatListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
