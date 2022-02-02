@@ -6,6 +6,9 @@ This is a practice app for me to practise iOS development.
 
 ### CHANGELOG
 
+2 Feb 2022:
+- Message send handling mechanism done
+
 29 Jan 2022:
 - Redesigned Chat view
 - Fixed: We get the authenticated user after we sign in as the user, not before. This fixes a crash when logging in.

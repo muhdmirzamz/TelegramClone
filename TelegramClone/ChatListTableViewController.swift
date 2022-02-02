@@ -19,6 +19,7 @@ class ChatListTableViewController: UITableViewController, UISearchResultsUpdatin
     var randomArr = ["Hello", "Bye", "Yo"]
     
     var usersArr: [String] = []
+    var userIDArr: [String] = []
     var filteredUsersArr: [String] = []
     
     override func viewDidLoad() {
@@ -48,16 +49,20 @@ class ChatListTableViewController: UITableViewController, UISearchResultsUpdatin
         
         ref.child("/profile").observeSingleEvent(of: .value) { (snapshot) in
             
-//            print("\(snapshot)")
             
+        
             if let profilesDict = snapshot.value as? Dictionary<String, Any> {
                 
-//                print("\(profilesDict)")
-//
                 // for every profile
                 for profileObj in profilesDict {
+                    
+                    print("key: \(profileObj.key)")
+                    
+                    self.userIDArr.append(profileObj.key)
 
                     if let profileInfo = profileObj.value as? Dictionary<String, Any> {
+                        
+                        print("ProfileInfo: \(profileInfo)")
                         
                         // get the username
                         guard let username = profileInfo["username"] as? String else {
@@ -130,9 +135,12 @@ class ChatListTableViewController: UITableViewController, UISearchResultsUpdatin
                     return
                 }
                 
+
                 self.searchController?.isActive = false
                 
+                chatViewController.otherUserID = self.userIDArr[indexPath.row]
                 chatViewController.hidesBottomBarWhenPushed = true
+                
                 self.navigationController?.pushViewController(chatViewController, animated: true)
             }
         }

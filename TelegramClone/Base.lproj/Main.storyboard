@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xHX-nN-g3w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xHX-nN-g3w">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,12 +51,12 @@
                             <constraint firstItem="dJg-ZJ-TGq" firstAttribute="top" secondItem="7Fd-PU-S9L" secondAttribute="bottom" constant="29" id="MDj-7N-rn2"/>
                             <constraint firstItem="c56-IX-Io5" firstAttribute="top" secondItem="VL3-QX-Dhw" secondAttribute="top" constant="255" id="TWP-u9-cPI"/>
                             <constraint firstItem="obd-FA-elj" firstAttribute="leading" secondItem="VL3-QX-Dhw" secondAttribute="leading" constant="96" id="Vnx-NP-b6K"/>
+                            <constraint firstItem="VL3-QX-Dhw" firstAttribute="trailing" secondItem="c56-IX-Io5" secondAttribute="trailing" constant="96" id="YIm-BS-CYS"/>
                             <constraint firstItem="7Fd-PU-S9L" firstAttribute="centerX" secondItem="tpT-gD-cFE" secondAttribute="centerX" id="c2G-yF-qvv"/>
                             <constraint firstItem="7Fd-PU-S9L" firstAttribute="leading" secondItem="VL3-QX-Dhw" secondAttribute="leading" constant="96" id="eGg-OW-gR3"/>
                             <constraint firstItem="obd-FA-elj" firstAttribute="top" secondItem="dJg-ZJ-TGq" secondAttribute="bottom" constant="8" id="ekQ-qM-fBV"/>
                             <constraint firstItem="dJg-ZJ-TGq" firstAttribute="leading" secondItem="VL3-QX-Dhw" secondAttribute="leading" constant="96" id="mTh-lc-Pwh"/>
                             <constraint firstItem="dJg-ZJ-TGq" firstAttribute="centerX" secondItem="tpT-gD-cFE" secondAttribute="centerX" id="opw-nb-atu"/>
-                            <constraint firstItem="c56-IX-Io5" firstAttribute="centerX" secondItem="tpT-gD-cFE" secondAttribute="centerX" id="qEn-8M-1eR"/>
                             <constraint firstItem="7Fd-PU-S9L" firstAttribute="top" secondItem="c56-IX-Io5" secondAttribute="bottom" constant="37" id="urH-6F-krE"/>
                         </constraints>
                     </view>
@@ -269,13 +269,13 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9D4-4V-clD">
-                                <rect key="frame" x="303" y="483" width="91" height="31"/>
+                                <rect key="frame" x="334" y="483" width="67" height="31"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="91" id="7RW-tY-WQO"/>
-                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="sendMessage" destination="ERG-45-8AA" eventType="touchUpInside" id="voZ-Q4-ZXM"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4IN-3Y-ypx">
                                 <rect key="frame" x="8" y="480" width="287" height="34"/>
@@ -291,13 +291,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="mF1-Hd-DFb" firstAttribute="bottom" secondItem="9D4-4V-clD" secondAttribute="bottom" constant="348" id="HLD-0C-KQ7"/>
-                            <constraint firstItem="mF1-Hd-DFb" firstAttribute="trailing" secondItem="9D4-4V-clD" secondAttribute="trailing" constant="20" id="KTi-O6-1Ub"/>
                             <constraint firstItem="bgL-bD-QWl" firstAttribute="centerX" secondItem="jl2-B5-dkX" secondAttribute="centerX" id="PYy-ih-RfD"/>
                             <constraint firstItem="bgL-bD-QWl" firstAttribute="leading" secondItem="mF1-Hd-DFb" secondAttribute="leading" id="Vit-Lc-0W2"/>
                             <constraint firstItem="bgL-bD-QWl" firstAttribute="top" secondItem="mF1-Hd-DFb" secondAttribute="top" id="afZ-rW-Uvd"/>
                             <constraint firstItem="4IN-3Y-ypx" firstAttribute="leading" secondItem="mF1-Hd-DFb" secondAttribute="leading" constant="8" id="ck5-9K-xki"/>
+                            <constraint firstItem="mF1-Hd-DFb" firstAttribute="trailing" secondItem="9D4-4V-clD" secondAttribute="trailing" constant="13" id="hBx-5d-3Yc"/>
                             <constraint firstItem="bgL-bD-QWl" firstAttribute="trailing" secondItem="mF1-Hd-DFb" secondAttribute="trailing" id="hEh-ey-T1Y"/>
-                            <constraint firstItem="9D4-4V-clD" firstAttribute="leading" secondItem="4IN-3Y-ypx" secondAttribute="trailing" constant="8" id="n3s-Ql-M4t"/>
                             <constraint firstItem="mF1-Hd-DFb" firstAttribute="bottom" secondItem="4IN-3Y-ypx" secondAttribute="bottom" constant="348" id="sg5-ad-mnT"/>
                         </constraints>
                     </view>
