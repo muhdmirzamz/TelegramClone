@@ -51,16 +51,17 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             "chatName": "",
             "chatDescription": "",
         ]
+    
+
         
         // set the general chats database first
         ref.child("/chats").child("\(chatID)").setValue(chatDict)
         
+    
         // set the user specific chats
-        ref.child("/userChats").child(userID).setValue(chatID)
+        ref.child("/userChats").child(userID).childByAutoId().setValue(chatID)
         
-        guard let messageID = ref.child("/messages/\(chatID)").childByAutoId().key else {
-           return
-        }
+
         
         guard let message = self.textfield.text else {
             return
@@ -71,16 +72,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             "content": message,
         ]
         
-        ref.child("/messages/\(chatID)/\(messageID)").setValue(messageDict)
+        ref.child("/messages/\(chatID)").childByAutoId().setValue(messageDict)
         
         
-        
-        
-        
-        
-
-        // set the user specific chats
-        ref.child("/userChats").child(otherUserID).setValue(chatID)
+       
+        ref.child("/userChats").child(otherUserID).childByAutoId().setValue(chatID)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

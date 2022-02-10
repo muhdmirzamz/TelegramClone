@@ -42,7 +42,8 @@ class ChatListTableViewController: UITableViewController, UISearchResultsUpdatin
         self.tableView.tableHeaderView = self.searchController?.searchBar
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    func getUserProfiles() {
+        self.userIDArr.removeAll()
         self.usersArr.removeAll()
         
         let ref = Database.database().reference()
@@ -56,13 +57,13 @@ class ChatListTableViewController: UITableViewController, UISearchResultsUpdatin
                 // for every profile
                 for profileObj in profilesDict {
                     
-                    print("key: \(profileObj.key)")
+//                    print("key: \(profileObj.key)")
                     
                     self.userIDArr.append(profileObj.key)
 
                     if let profileInfo = profileObj.value as? Dictionary<String, Any> {
                         
-                        print("ProfileInfo: \(profileInfo)")
+//                        print("ProfileInfo: \(profileInfo)")
                         
                         // get the username
                         guard let username = profileInfo["username"] as? String else {
@@ -73,10 +74,32 @@ class ChatListTableViewController: UITableViewController, UISearchResultsUpdatin
                     }
 
                 }
+                
+                for i in self.usersArr {
+                    print("User: \(i)")
+                }
 
             }
 
         }
+    }
+
+    func getUserChats() {
+        let ref = Database.database().reference()
+        let currentUserID = Auth.auth().currentUser?.uid
+        
+        ref.child("/userChats/\(currentUserID!)").observeSingleEvent(of: .value) { (snapshot) in
+//            print("Userchats: \(snapshot)")
+            print("Hello")
+            
+            
+        }
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getUserProfiles()
+//        getUserChats()
     }
 
     func registerTableViewCell() {
@@ -109,7 +132,7 @@ class ChatListTableViewController: UITableViewController, UISearchResultsUpdatin
         return self.randomArr.count
     }
 
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if self.searchController?.isActive == true && self.searchController?.searchBar.text?.isEmpty == false {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
@@ -136,10 +159,18 @@ class ChatListTableViewController: UITableViewController, UISearchResultsUpdatin
                 }
                 
 
-                self.searchController?.isActive = false
+                let username = self.filteredUsersArr[indexPath.row]
+                print("username: \(username)")
                 
-                chatViewController.otherUserID = self.userIDArr[indexPath.row]
+                let indexOfUsername = self.usersArr.firstIndex(of: username)
+                
+                
+                print("Username before: \(self.userIDArr[indexOfUsername!])")
+                
+                chatViewController.otherUserID = self.userIDArr[indexOfUsername!]
                 chatViewController.hidesBottomBarWhenPushed = true
+                
+                self.searchController?.isActive = false
                 
                 self.navigationController?.pushViewController(chatViewController, animated: true)
             }
@@ -156,6 +187,8 @@ class ChatListTableViewController: UITableViewController, UISearchResultsUpdatin
         self.filteredUsersArr = self.usersArr.filter { username in
             return username.contains(searchText)
         }
+        
+        print("filtered array count: \(self.filteredUsersArr.count)")
         
         self.tableView.reloadData()
 

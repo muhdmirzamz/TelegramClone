@@ -6,6 +6,9 @@ This is a practice app for me to practise iOS development.
 
 ### CHANGELOG
 
+10 Feb 2022:
+- You can now send a message to multiple people and the database keeps track of the messages and chats correctly
+
 2 Feb 2022:
 - Message send handling mechanism done
 
