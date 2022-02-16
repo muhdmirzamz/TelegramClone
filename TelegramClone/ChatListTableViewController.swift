@@ -22,6 +22,10 @@ class ChatListTableViewController: UITableViewController, UISearchResultsUpdatin
     var userIDArr: [String] = []
     var filteredUsersArr: [String] = []
     
+//    var userChats: [String] = []
+    
+    var userChatsArr: [Chat] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -85,21 +89,57 @@ class ChatListTableViewController: UITableViewController, UISearchResultsUpdatin
     }
 
     func getUserChats() {
+        self.userChatsArr.removeAll()
+        
         let ref = Database.database().reference()
         let currentUserID = Auth.auth().currentUser?.uid
         
         ref.child("/userChats/\(currentUserID!)").observeSingleEvent(of: .value) { (snapshot) in
-//            print("Userchats: \(snapshot)")
-            print("Hello")
             
-            
+            if let userChatArr = snapshot.value as? Dictionary<String, Any> {
+                
+                for userChat in userChatArr {
+                    
+                    let chat = Chat()
+                    
+                    print("User chat value: \(userChat.value)")
+                    
+                    guard let chatID = userChat.value as? String else {
+                        return
+                    }
+                    
+                    chat.chatID = chatID
+                    
+                    ref.child("/chats/\(userChat.value)").observeSingleEvent(of: .value) { (snapshot) in
+                        if let chatProperties = snapshot.value as? Dictionary<String, Any> {
+                            print("Chat properties: \(chatProperties)")
+                            
+                            guard let chatName = chatProperties["chatName"] as? String else {
+                                return
+                            }
+                            
+                            guard let chatDescription = chatProperties["chatDescription"] as? String else {
+                                return
+                            }
+                            
+                            chat.chatName = chatName
+                            chat.chatDescription = chatDescription
+                            
+                            self.userChatsArr.append(chat)
+                            
+                            print("User chats arr count: \(self.userChatsArr.count)")
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            }
         }
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         getUserProfiles()
-//        getUserChats()
+        getUserChats()
     }
 
     func registerTableViewCell() {
@@ -129,7 +169,7 @@ class ChatListTableViewController: UITableViewController, UISearchResultsUpdatin
             return self.filteredUsersArr.count
         }
         
-        return self.randomArr.count
+        return self.userChatsArr.count
     }
 
 
@@ -145,6 +185,8 @@ class ChatListTableViewController: UITableViewController, UISearchResultsUpdatin
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath) as! ChatTableViewCell
 
         // Configure the cell...
+        cell.chatNameLabel.text = self.userChatsArr[indexPath.row].chatName
+        cell.chatDescriptionLabel.text = self.userChatsArr[indexPath.row].chatDescription
 
         return cell
     }

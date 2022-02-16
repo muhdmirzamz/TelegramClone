@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login() {
+        
         guard let email = self.emailTextfield.text else {
             return
         }
@@ -31,7 +32,6 @@ class LoginViewController: UIViewController {
         }
         
         let ref = Database.database().reference()
-        
         
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let result = result {

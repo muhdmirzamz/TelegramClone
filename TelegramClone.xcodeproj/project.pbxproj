@@ -17,6 +17,7 @@
 		AA6A598C277E25F9002C8390 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */; };
 		AA745CFC2783593A00DCE8C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA745CFB2783593A00DCE8C0 /* GoogleService-Info.plist */; };
 		AAA1C92A278C99C9004280A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1C929278C99C9004280A5 /* LoginViewController.swift */; };
+		AAB9F17D27BD37DC004BD504 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB9F17C27BD37DC004BD504 /* Chat.swift */; };
 		AACFDB58278B22A000108901 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFDB57278B22A000108901 /* RegisterViewController.swift */; };
 		AAEAAD182778D8BB0056985E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEAAD172778D8BB0056985E /* AppDelegate.swift */; };
 		AAEAAD1A2778D8BB0056985E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEAAD192778D8BB0056985E /* SceneDelegate.swift */; };
@@ -38,6 +39,7 @@
 		AA6A598B277E25F9002C8390 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		AA745CFB2783593A00DCE8C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAA1C929278C99C9004280A5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AAB9F17C27BD37DC004BD504 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		AACFDB57278B22A000108901 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AAEAAD142778D8BB0056985E /* TelegramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEAAD172778D8BB0056985E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 			name = "view controllers";
 			sourceTree = "<group>";
 		};
+		AAB9F17727BD3796004BD504 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				AAB9F17C27BD37DC004BD504 /* Chat.swift */,
+			);
+			name = entity;
+			sourceTree = "<group>";
+		};
 		AAEAAD0B2778D8BB0056985E = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 			children = (
 				AAEAAD172778D8BB0056985E /* AppDelegate.swift */,
 				AAEAAD192778D8BB0056985E /* SceneDelegate.swift */,
+				AAB9F17727BD3796004BD504 /* entity */,
 				AA7EB393278DF61600FB66E8 /* view controllers */,
 				AA1FA3FA277F6FC700ABFA48 /* ChatTableViewCell.swift */,
 				AA1FA3FB277F6FC700ABFA48 /* ChatTableViewCell.xib */,
@@ -247,6 +258,7 @@
 				AAA1C92A278C99C9004280A5 /* LoginViewController.swift in Sources */,
 				AAEAAD182778D8BB0056985E /* AppDelegate.swift in Sources */,
 				AAEAAD1A2778D8BB0056985E /* SceneDelegate.swift in Sources */,
+				AAB9F17D27BD37DC004BD504 /* Chat.swift in Sources */,
 				AA1FA3FC277F6FC700ABFA48 /* ChatTableViewCell.swift in Sources */,
 				AA3456D527A2FD1100563439 /* UserTableViewCell.swift in Sources */,
 				AACFDB58278B22A000108901 /* RegisterViewController.swift in Sources */,
